@@ -9,7 +9,13 @@ var term = new Terminal({
     fontFamily: "monospace",
     fontWeight: "bold"
 });
+
 term.open(document.getElementById('terminal'))
+document.getElementsByClassName('terminal')[0].focus()
+setTimeout(function () {
+    document.getElementById('window').setAttribute('style', 'width: ' +
+        (document.getElementsByClassName('xterm-screen')[0].clientWidth + 15) + 'px')
+})
 
 // Styles
 
@@ -78,7 +84,9 @@ term.addDisposableListener('key', function (key, ev) {
                 var wasPause = isPause
                 promptCallback = null
                 isPause = false
-                callback(wasPause ? undefined : promptData)
+                setTimeout(function () {
+                    callback(wasPause ? undefined : promptData)
+                })
             } else {
                 input('?')
             }
@@ -98,22 +106,15 @@ term.addDisposableListener('key', function (key, ev) {
     }
 })
 
-function clear() {
-    // Requires to be called in a separate tick then the text to clear
-    term.clear()
-}
-
 function print(str) {
     term.writeln(str !== undefined ? str : "")
 }
 
-function title(title) {
-    document.getElementById('title').innerText = title
-    document.getElementsByTagName('title')[0].innerText = title
-}
-
-function legend(legendHtml) {
-    document.getElementById('legend').innerHTML = legendHtml
+function pause(callback) {
+    promptData = ''
+    promptCallback = callback
+    isPause = true
+    cursorX = 0
 }
 
 function input(text, callback) {
@@ -128,11 +129,9 @@ function input(text, callback) {
     cursorX = 0
 }
 
-function pause(callback) {
-    promptData = ''
-    promptCallback = callback
-    isPause = true
-    cursorX = 0
+function clear() {
+    // Requires to be called in a separate tick then the text to clear
+    term.clear()
 }
 
 function color(colorCode) {
@@ -146,3 +145,17 @@ function color(colorCode) {
 function end() {
     isEnd = true
 }
+
+function title(title) {
+    document.getElementById('title').innerText = title
+    document.getElementsByTagName('title')[0].innerText = title
+}
+
+function legend(legendHtml) {
+    document.getElementById('legend').innerHTML = legendHtml
+}
+
+function resize(rows, cols) {
+    term.resize(rows, cols)
+}
+
