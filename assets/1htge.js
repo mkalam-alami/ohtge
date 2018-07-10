@@ -78,7 +78,9 @@ term.addDisposableListener('key', function (key, ev) {
     var printable = !ev.altKey && !ev.altGraphKey && !ev.ctrlKey && !ev.metaKey
     if (ev.keyCode == 13) {
         if (promptData || isPause) {
-            term.write('\r\n')
+            if (!isPause) {
+                term.write('\r\n')
+            }
             if (promptCallback) {
                 var callback = promptCallback
                 var wasPause = isPause
