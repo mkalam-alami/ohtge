@@ -1,22 +1,3 @@
-// Terminal init
-// https://xtermjs.org/docs/api/terminal/classes/terminal/
-
-var term = new Terminal({
-    cols: 80,
-    rows: 20,
-    cursorBlink: true,
-    cursorStyle: "underline",
-    fontFamily: "monospace",
-    fontWeight: "bold"
-});
-
-term.open(document.getElementById('terminal'))
-document.getElementsByClassName('terminal')[0].focus()
-setTimeout(function () {
-    document.getElementById('window').setAttribute('style', 'width: ' +
-        (document.getElementsByClassName('xterm-screen')[0].clientWidth + 15) + 'px')
-})
-
 // Styles
 
 var styles = {}
@@ -58,6 +39,26 @@ Object.keys(styleCodes).forEach(function (key) {
     style.open = '\u001b[' + val[0] + 'm';
     style.close = '\u001b[' + val[1] + 'm';
 });
+
+// Terminal init
+// https://xtermjs.org/docs/api/terminal/classes/terminal/
+
+var term = new Terminal({
+    cols: 80,
+    rows: 20,
+    cursorBlink: true,
+    cursorStyle: "underline",
+    fontFamily: "monospace",
+    fontWeight: "bold"
+});
+
+term.open(document.getElementById('terminal'))
+document.getElementsByClassName('terminal')[0].focus()
+setTimeout(function () {
+    document.getElementById('window').setAttribute('style', 'width: ' +
+        (document.getElementsByClassName('xterm-screen')[0].clientWidth + 15) + 'px')
+})
+color("bold")
 
 // State
 
@@ -160,4 +161,3 @@ function legend(legendHtml) {
 function resize(rows, cols) {
     term.resize(rows, cols)
 }
-
