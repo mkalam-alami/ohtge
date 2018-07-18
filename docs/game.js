@@ -25,14 +25,16 @@ function loop() {
 
     switch (a) {
       case '1':
-        print("print(str)        | Displays [str] to the screen and goes to the next line.")
-        print("pause(cb)         | Pauses the execution until the user presses Enter, then calls [cb].")
-        print("input([str ,] cb) | Displays [str], waits for user input and calls [cb] with the input as argument.")
-        print("clear()           | Clears the screen. (Can't clean text printed the same tick, `setTimeout` is a workaround)")
-        print("color(code)       | Changes font color and styling. Check the lib sources for valid codes.")
-        print("end()             | Stops the execution. You probably want to call `return` right after.")
-        print("title(str)        | Changes the fake window name and page title")
-        print("legend(html)      | Displays arbitrary HTML under the game")
+        print("print(str)         | Displays [str] to the screen and goes to the next line.")
+        print("pause(cb)          | Pauses the execution until the user presses Enter, then calls [cb].")
+        print("input([str ,] cb)  | Displays [str], waits for user input and calls [cb] with the input as argument.")
+        print("clear()            | Clears the screen. (Can't clean text printed the same tick, `setTimeout` is a workaround)")
+        print("color(code)        | Changes font color and styling. Check the lib sources for valid codes.")
+        print("end()              | Stops the execution. You probably want to call `return` right after.")
+        print("title(str)         | Changes the fake window name and page title")
+        print("legend(html)       | Displays arbitrary HTML under the game")
+        print("resize(rows, cols) | Resizes the game window")
+        
         pause(loop)
         break
 
