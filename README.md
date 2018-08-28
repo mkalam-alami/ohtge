@@ -25,5 +25,6 @@ function loop () {
 
 ## Made with 1htge
 
+* ["prince.exe"](https://marwane.kalam-alami.net/jams/alakajam-k5/) (5th Kajam entry)
 * ["monster.exe"](https://marwane.kalam-alami.net/1hgj/167/) (1HGJ 167 entry)
-* ["Day Off Work" web port](https://marwane.kalam-alami.net/misc/dayoffwork/) (1st Alakajam! entry)
+* ["Day Off Work"](https://marwane.kalam-alami.net/misc/dayoffwork/) (web port of a 1st Alakajam! entry)
