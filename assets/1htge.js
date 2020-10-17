@@ -152,6 +152,10 @@ function end() {
 }
 
 function title(title) {
+    if (document.getElementsByTagName('title').length === 0) {
+        var titleEl = document.createElement('title')
+        document.getElementsByTagName('head')[0].appendChild(titleEl)
+    }
     var titleTagEls = document.getElementsByTagName('title')
     for (var index in titleTagEls) {
         titleTagEls[index].innerText = title
