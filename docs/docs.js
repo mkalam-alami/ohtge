@@ -1,3 +1,5 @@
+/// <reference path="../assets/1htge.d.ts" />
+
 title("1htgedoc.exe")
 legend("<a href=\"https://github.com/mkalam-alami/1htge\">1htge</a> documentation. \
   Sources of these docs <a href=\"https://github.com/mkalam-alami/1htge/blob/master/docs/game.js\">available here</a>")
