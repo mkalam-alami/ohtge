@@ -18,8 +18,12 @@ a {
 }
 
 #window {
-  position: relative;
-  margin: auto;
+    position: relative;
+    margin: auto;
+}
+
+#window.cloaked {
+    opacity: 0;
 }
 
 #title {
@@ -37,6 +41,7 @@ a {
     padding: 5px;
     background-color: black;
 }
+
 .xterm-viewport {
     overflow: hidden !important;
 }

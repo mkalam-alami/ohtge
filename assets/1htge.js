@@ -31,14 +31,14 @@ var styleCodes = {
     bgMagenta: [45, 49],
     bgCyan: [46, 49],
     bgWhite: [47, 49]
-};
+}
 
 Object.keys(styleCodes).forEach(function (key) {
-    var val = styleCodes[key];
-    var style = styles[key] = [];
-    style.open = '\u001b[' + val[0] + 'm';
-    style.close = '\u001b[' + val[1] + 'm';
-});
+    var val = styleCodes[key]
+    var style = styles[key] = []
+    style.open = '\u001b[' + val[0] + 'm'
+    style.close = '\u001b[' + val[1] + 'm'
+})
 
 // Terminal init
 // https://xtermjs.org/docs/api/terminal/classes/terminal/
@@ -50,13 +50,15 @@ var term = new Terminal({
     cursorStyle: "underline",
     fontFamily: "monospace",
     fontWeight: "bold"
-});
+})
 
 term.open(document.getElementById('terminal'))
 document.getElementsByClassName('terminal')[0].focus()
 setTimeout(function () {
-    document.getElementById('window').setAttribute('style', 'width: ' +
+    var windowEl = document.getElementById('window')
+    windowEl.setAttribute('style', 'width: ' +
         (document.getElementsByClassName('xterm-screen')[0].clientWidth + 15) + 'px')
+    windowEl.classList.remove('cloaked')
 })
 color("bold")
 
@@ -104,7 +106,7 @@ term.addDisposableListener('key', function (key, ev) {
         if (promptCallback) {
             promptData += key
         }
-        term.write(key);
+        term.write(key)
         cursorX++
     }
 })
@@ -150,8 +152,15 @@ function end() {
 }
 
 function title(title) {
-    document.getElementById('title').innerText = title
-    document.getElementsByTagName('title')[0].innerText = title
+    var titleTagEls = document.getElementsByTagName('title')
+    for (var index in titleTagEls) {
+        titleTagEls[index].innerText = title
+    }
+
+    var titleIdEl = document.getElementById('title')
+    if (titleIdEl) {
+        titleIdEl.innerText = title
+    }
 }
 
 function legend(legendHtml) {
