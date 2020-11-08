@@ -1,4 +1,4 @@
-/// <reference path="../dist/ohtge.d.ts" />
+/// <reference path="../lib/ohtge.d.ts" />
 
 title("ohtgedoc.exe")
 color("bold")

@@ -1,11 +1,9 @@
 {
   "name": "ohtge",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A very basic wrapper for xterm.js to make small console games using a BASIC-inspired API.",
-  "main": "dist/ohtge.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "main": "./lib/ohtge.js",
+  "types": "./lib/ohtge.d.ts",
   "dependencies": {},
   "devDependencies": {
     "css-loader": "^5.0.1",
@@ -24,8 +22,8 @@
     "type": "git",
     "url": "git+https://github.com/mkalam-alami/ohtge.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Marwane Kalam-Alami",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mkalam-alami/ohtge/issues"
   },

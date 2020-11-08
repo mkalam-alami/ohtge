@@ -23,6 +23,12 @@ async function loop() {
 
 ![](https://raw.githubusercontent.com/mkalam-alami/ohtge/master/lib/ohtge-readme.gif)
 
+## Setup
+
+1. Download the [zip](https://github.com/mkalam-alami/ohtge/archive/master.zip)
+2. Only keep the files you want (typically `dist/` + one of the examples)
+3. Make a game!
+
 ## Made with ohtge
 
 * ["freeze.exe"](https://marwane.kalam-alami.net/1hgj/286/) (1HGJ 286 entry, 2020)

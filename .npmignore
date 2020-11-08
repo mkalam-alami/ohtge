@@ -1,0 +1,9 @@
+docs
+example*
+lib/*.png
+lib/*.gif
+lib/*.css
+lib/*ohtge.ts
+lib/*.json
+lib/webpack.config.js
+.gitignore
