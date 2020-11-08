@@ -1,9 +1,10 @@
 export declare type InputCallback = (input: string | undefined) => void | Promise<void>;
+export declare type StyleCode = 'reset' | 'bold' | 'dim' | 'italic' | 'underline' | 'inverse' | 'hidden' | 'strikethrough' | 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white' | 'gray' | 'grey' | 'bgBlack' | 'bgRed' | 'bgGreen' | 'bgYellow' | 'bgBlue' | 'bgMagenta' | 'bgCyan' | 'bgWhite';
 declare function writeFn(text?: string): void;
 declare function pauseFn(callback?: InputCallback): Promise<unknown>;
 declare function inputFn(textOrCallback: string | InputCallback, callback?: InputCallback): Promise<string>;
 declare function clearFn(): void;
-declare function colorFn(colorCode: string): void;
+declare function colorFn(styleCode: StyleCode): void;
 declare function endFn(): void;
 declare function titleFn(title: string): void;
 declare function resizeFn(rows: number, cols: number): void;
@@ -25,7 +26,7 @@ export declare const input: typeof inputFn;
  */
 export declare const clear: typeof clearFn;
 /**
- * Sets the current text color, to be applied in all future `print` and `input` commands.
+ * Sets the current text color, to be applied in all future `write` and `input` commands.
  */
 export declare const color: typeof colorFn;
 /**
@@ -59,9 +60,9 @@ declare global {
      */
     export const clear: () => void;
     /**
-     * Sets the current text color, to be applied in all future `print` and `input` commands.
+     * Sets the current text color, to be applied in all future `write` and `input` commands.
      */
-    export const color: (colorCode: string) => void;
+    export const color: (styleCode: StyleCode) => void;
     /**
      * Ends the program.
      */

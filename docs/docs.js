@@ -9,7 +9,7 @@ loop()
 function loop() {
   clear()
   color('white')
-  write("WELCOME TO THE ohtge DOCUMENTATION")
+  write("WELCOME TO THE OHTGE DOCUMENTATION")
   write("==================================")
   write("[1] View API documentation")
   write("[2] Download sources as a ZIP")
@@ -51,6 +51,9 @@ function loop() {
         window.location = 'https://github.com/mkalam-alami/ohtge'
         end()
         return
+
+      default:
+        loop()
     }
   })
 }

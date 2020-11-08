@@ -1,6 +1,6 @@
 # One Hour Text Game Engine
 
-A very basic wrapper for [xterm.js](https://xtermjs.org/) to make small console games using a BASIC-inspired API. [Docs available here](https://mkalam-alami.github.io/ohtge/docs/).
+A small wrapper for [xterm.js](https://xtermjs.org/) to make small terminal games using a trivial API. [Docs available here](https://mkalam-alami.github.io/ohtge/docs/).
 
 ## Example `game.js` file
 

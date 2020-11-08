@@ -4,11 +4,15 @@ import './ohtge.css';
 
 export type InputCallback = (input: string | undefined) => void | Promise<void>;
 
+export type StyleCode = 'reset' | 'bold' | 'dim' | 'italic' | 'underline' | 'inverse' | 'hidden' | 'strikethrough'
+    | 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white' | 'gray' | 'grey'
+    | 'bgBlack' | 'bgRed' | 'bgGreen' | 'bgYellow' | 'bgBlue' | 'bgMagenta' | 'bgCyan' | 'bgWhite';
+
 // Styles
 
-var styles: Record<string, { open: string; close: string; }> = {};
+var styles: Record<StyleCode, { open: string; close: string; }> = {} as any;
 
-const styleCodes: Record<string, [number, number]> = {
+const styleCodes: Record<StyleCode, [number, number]> = {
     reset: [0, 0],
 
     bold: [1, 22],
@@ -40,9 +44,10 @@ const styleCodes: Record<string, [number, number]> = {
     bgWhite: [47, 49]
 }
 
-Object.keys(styleCodes).forEach(function (key) {
-    const val = styleCodes[key];
-    styles[key] = {
+Object.keys(styleCodes).forEach(function (styleCode) {
+    const styleCodeKey = styleCode as StyleCode;
+    const val = styleCodes[styleCodeKey];
+    styles[styleCodeKey] = {
         open: '\u001b[' + val[0] + 'm',
         close: '\u001b[' + val[1] + 'm'
     };
@@ -164,11 +169,10 @@ function clearFn() {
     term.clear();
 }
 
-function colorFn(colorCode: string) {
-    if (typeof colorCode === 'string') {
-        term.write(styles[colorCode].open)
-    } else {
-        term.write(colorCode)
+function colorFn(styleCode: StyleCode) {
+    const styleCodeKey = styleCode;
+    if (styles[styleCodeKey]) {
+        term.write(styles[styleCodeKey].open)
     }
 }
 
@@ -230,7 +234,7 @@ export const input = inputFn;
 export const clear = clearFn;
 
 /**
- * Sets the current text color, to be applied in all future `print` and `input` commands.
+ * Sets the current text color, to be applied in all future `write` and `input` commands.
  */
 export const color = colorFn;
 
@@ -272,9 +276,9 @@ declare global {
     export const clear: () => void;
 
     /**
-     * Sets the current text color, to be applied in all future `print` and `input` commands.
+     * Sets the current text color, to be applied in all future `write` and `input` commands.
      */
-    export const color: (colorCode: string) => void;
+    export const color: (styleCode: StyleCode) => void;
 
     /**
      * Ends the program.
