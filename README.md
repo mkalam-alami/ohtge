@@ -5,6 +5,8 @@ A very basic wrapper for [xterm.js](https://xtermjs.org/) to make small console 
 ## Example `game.js` file
 
 ```javascript
+/// <reference path="node_modules/ohtge/lib/ohtge.d.ts" />
+
 title("test.exe")
 loop()
 
@@ -23,11 +25,34 @@ async function loop() {
 
 ![](https://raw.githubusercontent.com/mkalam-alami/ohtge/master/lib/ohtge-readme.gif)
 
-## Setup
+## Simple setup
 
 1. Download the [zip](https://github.com/mkalam-alami/ohtge/archive/master.zip)
 2. Only keep the files you want (typically `dist/` + one of the examples)
 3. Make a game!
+
+## Setup from scratch
+
+1. `npm install ohtge`
+2. Insert the following HTML in your web page:
+
+```html
+<div class="ohtge-window cloaked">
+    <div class="ohtge-title"></div>
+    <div class="ohtge-terminal"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/ohtge"></script>
+<script src="[ YOUR OWN GAME SCRIPT ]"></script>
+```
+
+3. Insert the following at the top of your own script (either JS or TS):
+
+```javascript
+/// <reference path="node_modules/ohtge/lib/ohtge.d.ts" />
+
+write('Hello world!');
+```
 
 ## Made with ohtge
 
