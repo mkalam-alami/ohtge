@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #346;
+    padding: 30px;
+    color: white;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+}
+
+a {
+    color: white;
+}
+
+#legend {
+    margin-top: 10px;
+}

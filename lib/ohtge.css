@@ -1,0 +1,27 @@
+.ohtge-window {
+    position: relative;
+    margin: auto;
+}
+.ohtge-window.cloaked {
+    opacity: 0;
+}
+
+.ohtge-title {
+    position: absolute;
+    font-size: 11px;
+    top: 5px;
+    left: 7px;
+    height: 22px;
+}
+
+.ohtge-terminal {
+    border: 3px solid transparent;
+    border-top: 22px solid transparent;
+    border-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGYAAABYCAYAAAAHr4K/AAABoElEQVR4nO3ZQW6CQBhAYbiRtyMkrMbES3gYKON5vEAX01Vboy2CcZgnPpJvMQmJOC8/SqhijCmz84Xcn7UZVYwxZT7OFzxmHCGE3zBODMdNmKoKKswwUIaBMgzUZJi63qe63he/yHdkGKi7tzLjGEaG4Zv1r+w7joEM8/ZmP8cYxjBaEkaGkWG4DANlGKg/w2Tiq+WFDANlGCjDQBkGaq0wyhjm8x/Fv8QWGQbKMFCGgTIMlGGgDANlGCjDQPnkD2UYKMNAZQszDMOkpedNnV96E18qjB7X931q29YwNIaBMgyUYaAMA2UYKMNAGQbKMFCGgTIMlGGgDANlGKjMYcaV19vhxEA9Pcw4jmn9Sdne5GQJczqdVld6I18szMfVBuZbl97IHJ76zt+JQYcZrjZu6fqeeLMuvYkvEsaJgYfJPTmGeTCMEwML428MLkyJaXFiZBgZBsswUIaBMgyUYaAMA2UYKMNAGQbKMFCGgTIMlGGgDANlGCjDQBkG6idMCKG4w+EwqfT1ra1qmiYdj8fUNE1RXddNKn19a9rtdukLlpqJT6jW2cIAAAAASUVORK5CYII=') 22 3; /* inline 'ohtge-border.png' */
+    padding: 5px;
+    background-color: black;
+    margin-bottom: 10px;
+}
+.ohtge-terminal .xterm-viewport {
+    overflow: hidden !important;
+}

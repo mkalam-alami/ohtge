@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "lib": [
+      "ES2015"
+    ],
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "game.ts"
+  ]
+}
