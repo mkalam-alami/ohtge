@@ -1,6 +1,9 @@
 .ohtge-window {
     position: relative;
     margin: auto;
+    font-weight: bold;
+    font-family: monospace;
+    color: white;
 }
 .ohtge-window.cloaked {
     opacity: 0;
@@ -9,7 +12,7 @@
 .ohtge-title {
     position: absolute;
     font-size: 11px;
-    top: 5px;
+    top: 6px;
     left: 7px;
     height: 22px;
 }

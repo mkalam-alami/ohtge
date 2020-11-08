@@ -1,5 +1,3 @@
-import 'xterm/css/xterm.css';
-import './ohtge.css';
 export declare type InputCallback = (input: string | undefined) => void | Promise<void>;
 declare function writeFn(text?: string): void;
 declare function pauseFn(callback?: InputCallback): Promise<unknown>;
