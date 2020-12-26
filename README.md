@@ -54,7 +54,7 @@ async function loop() {
 write('Hello world!');
 ```
 
-## API Documentation
+## Complete API
 
 [![](https://i.imgur.com/mF5Yehw.png)](https://mkalam-alami.github.io/ohtge/docs/)
 
