@@ -33,7 +33,7 @@ async function loop() {
 
 ## Setup from scratch
 
-1. `npm install ohtge`
+1. `npm install ohtge` *(Optional, only used as reference for IDE auto-completion)*
 2. Insert the following HTML in your web page:
 
 ```html
