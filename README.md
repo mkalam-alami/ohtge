@@ -54,6 +54,10 @@ async function loop() {
 write('Hello world!');
 ```
 
+## API Documentation
+
+[![](https://i.imgur.com/mF5Yehw.png)](https://mkalam-alami.github.io/ohtge/docs/)
+
 ## Made with ohtge
 
 * ["freeze.exe"](https://marwane.kalam-alami.net/1hgj/286/) (1HGJ 286 entry, 2020)
